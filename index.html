@@ -12,7 +12,7 @@
 </head>
 <body class="min-h-dvh bg-base-100">
     <main class="min-h-full">
-      <div class="navbar bg-base-300 shadow-sm">
+      <div class="navbar bg-prima shadow-sm">
         <div class="navbar-start">
           <div class="dropdown">
             <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -39,9 +39,23 @@
           </ul>
         </div>
         <div class="navbar-end">
-          <a class="btn" id="new-project-btn">New Project</a>
+          <a class="btn" id="new-project-btn" onclick="newProjectModal.showModal()">New Project</a>
         </div>
       </div>
     </main>
+    <dialog id="newProjectModal" class="modal">
+      <div class="modal-box">
+		<h1 class="text-center text-primary font-extrabold text-2xl mb-3">New Project</h1>
+		<fieldset class="fieldset">
+		  <legend class="fieldset-legend">What's the project name?</legend>
+		  <input type="text" class="input" placeholder="Type here" />
+		  <legend class="fieldset-legend">What's about?</legend>
+		  <input type="text" class="input" placeholder="Description">
+		</fieldset>
+      </div>
+      <form method="dialog" class="modal-backdrop">
+        <button>close</button>
+      </form>
+    </dialog>
 </body>
 </html>

@@ -1,13 +1,23 @@
-// const ulProjectsElm = document.querySelector('#projects-ul');
-// const newProjectBtn = document.querySelector('#new-project-btn');
+const ulProjectsElm = document.querySelector('#projects-ul');
+const newProjectBtn = document.querySelector('#new-project-btn');
 
 // Array to store all the user's projects
 const userProjects = [];
 
+document.addEventListener('click', (e) => {
+    switch (e) {
+        case newProjectBtn:
+            newProjectModal.showModal();
+            break;
+        default:
+            console.log('C H A M O');
+            break;
+    }
+})
+
 class Project {
-    constructor(name, priority, description, deadline) {
+    constructor(name, description, deadline) {
         this.name = name;
-        this.priority = priority;
         this.description = description;
         this.deadline = deadline;
         this.tasks = [];
@@ -23,16 +33,13 @@ class Project {
         this.tasks.splice(index, 1);
     }
 }
-
 class Task {
-    constructor(name) {
-
+    constructor(name, description, deadline, priority) {
+        this.name = name;
+        this.description = description;
+        this.deadline = deadline;
+        this.priority = priority;
     }
 }
 
-const novaProject = new Project('nova', "high", 'My first project for the todo app', '01/03/2025');
-novaProject.addTask('C H A M O')
-novaProject.addTask('C H A M O S')
-
-
-console.log(novaProject.tasks)
+const novaProject = new Project('nova', 'My first project for the todo app', '01/03/2025');
